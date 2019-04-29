@@ -24,7 +24,7 @@ namespace SortAlgorithms
         {
             if (int.TryParse(AddTextBox.Text, out int value))
             {
-                var item = new SortedItem(value);
+                var item = new SortedItem(value, items.Count);
                 items.Add(item);
                 panel3.Controls.Add(item.ProgressBar);
                 panel3.Controls.Add(item.Label);
@@ -41,7 +41,7 @@ namespace SortAlgorithms
 
                 for (int i = 0; i < value; i++)
                 {
-                    var item = new SortedItem(rnd.Next());
+                    var item = new SortedItem(rnd.Next(100), items.Count);
                     items.Add(item);
                     panel3.Controls.Add(item.ProgressBar);
                     panel3.Controls.Add(item.Label);
@@ -49,6 +49,11 @@ namespace SortAlgorithms
             }
 
             FillTextBox.Text = "";
+        }
+
+        private void BubbleSortBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
