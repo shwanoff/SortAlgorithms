@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -53,7 +54,27 @@ namespace SortAlgorithms
 
         private void BubbleSortBtn_Click(object sender, EventArgs e)
         {
+            var bubble = new BubbleSort<SortedItem>(items);
+            bubble.CompareEvent += Bubble_CompareEvent;
+            bubble.SwopEvent += Bubble_SwopEvent;
+            bubble.Sort();
 
+        }
+
+        private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        {
+            var temp = e.Item1.Value;
+            e.Item1.SetValue(e.Item2.Value);
+            e.Item2.SetValue(temp);
+
+            panel3.Refresh();
+        }
+
+        private void Bubble_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        {
+            e.Item1.SetColor(Color.Red);
+            e.Item2.SetColor(Color.Green);
+            panel3.Refresh();
         }
     }
 }
