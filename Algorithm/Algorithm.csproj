@@ -46,6 +46,7 @@
     <Compile Include="CocktailSort.cs" />
     <Compile Include="InsertSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShellSort.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
