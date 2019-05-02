@@ -24,13 +24,12 @@ namespace Algorithm
         {
             if(positionA < Items.Count && positionB < Items.Count)
             {
+                SwopEvent?.Invoke(this, new Tuple<T, T>(Items[positionA], Items[positionB]));
+                SwopCount++;
+
                 var temp = Items[positionA];
                 Items[positionA] = Items[positionB];
                 Items[positionB] = temp;
-
-                SwopCount++;
-
-                SwopEvent?.Invoke(this, new Tuple<T, T>(Items[positionA], Items[positionB]));
             }
         }
 
