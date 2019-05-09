@@ -1,4 +1,5 @@
 ﻿using Algorithm;
+using Algorithm.DataStructures;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -74,11 +75,24 @@ namespace SortAlgorithms
 
         private void Algorithm_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
+            e.Item1.SetColor(Color.Aqua);
+            e.Item2.SetColor(Color.Brown);
+            panel3.Refresh();
+
+            Thread.Sleep(20);
+
             var temp = e.Item1.Number;
             e.Item1.SetPosition(e.Item2.Number);
             e.Item2.SetPosition(temp);
-
             panel3.Refresh();
+
+            Thread.Sleep(20);
+
+            e.Item1.SetColor(Color.Blue);
+            e.Item2.SetColor(Color.Blue);
+            panel3.Refresh();
+
+            Thread.Sleep(20);
         }
 
         private void Algorithm_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
@@ -87,17 +101,25 @@ namespace SortAlgorithms
             e.Item2.SetColor(Color.Green);
             panel3.Refresh();
 
-            Thread.Sleep(100);
+            Thread.Sleep(20);
 
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
             panel3.Refresh();
+
+            Thread.Sleep(20);
         }
 
 
         private void BtnClick(AlgorithmBase<SortedItem> algorithm)
         {
             RefreshItems();
+
+            for (int i = 0; i < algorithm.Items.Count; i++)
+            {
+                algorithm.Items[i].SetPosition(i);
+            }
+            panel3.Refresh();
 
             algorithm.CompareEvent += Algorithm_CompareEvent;
             algorithm.SwopEvent += Algorithm_SwopEvent;
@@ -136,6 +158,12 @@ namespace SortAlgorithms
         {
             var select = new SelectionSort<SortedItem>(items);
             BtnClick(select);
+        }
+
+        private void HeapSortBtn_Click(object sender, EventArgs e)
+        {
+            var heap = new Heap<SortedItem>(items);
+            BtnClick(heap);
         }
     }
 }
