@@ -1,13 +1,8 @@
 ﻿using Algorithm;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SortAlgorithms
@@ -92,7 +87,7 @@ namespace SortAlgorithms
             e.Item2.SetColor(Color.Green);
             panel3.Refresh();
 
-            Thread.Sleep(50);
+            Thread.Sleep(100);
 
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
@@ -135,6 +130,12 @@ namespace SortAlgorithms
         {
             var shell = new ShellSort<SortedItem>(items);
             BtnClick(shell);
+        }
+
+        private void SelectionSortBtn_Click(object sender, EventArgs e)
+        {
+            var select = new SelectionSort<SortedItem>(items);
+            BtnClick(select);
         }
     }
 }
