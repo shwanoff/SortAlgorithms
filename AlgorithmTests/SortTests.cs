@@ -169,7 +169,7 @@ namespace Algorithm.Tests
         public void GnomeSortTest()
         {
             // arrange
-            var gnome = new SelectionSort<int>();
+            var gnome = new GnomeSort<int>();
             gnome.Items.AddRange(Items);
 
             // act
