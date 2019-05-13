@@ -11,6 +11,7 @@ namespace Algorithm
         public List<T> Items { get; set; } = new List<T>();
 
         public event EventHandler<Tuple<T, T>> CompareEvent;
+
         public event EventHandler<Tuple<T, T>> SwopEvent;
 
         public AlgorithmBase(IEnumerable<T> items)
