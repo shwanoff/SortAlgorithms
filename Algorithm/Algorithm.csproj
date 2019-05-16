@@ -50,6 +50,7 @@
     <Compile Include="GnomeSort.cs" />
     <Compile Include="InsertSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedixSort.cs" />
     <Compile Include="SelectionSort.cs" />
     <Compile Include="ShellSort.cs" />
   </ItemGroup>
