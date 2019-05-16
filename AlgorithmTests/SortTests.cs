@@ -20,7 +20,7 @@ namespace Algorithm.Tests
         public void Init()
         {
             Items.Clear();
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 Items.Add(rnd.Next(0, 1000));
             }
@@ -182,19 +182,36 @@ namespace Algorithm.Tests
         }
 
         [TestMethod()]
-        public void RedixSortTest()
+        public void LsdRedixSortTest()
         {
             // arrange
-            var redix = new RedixSort<int>();
-            redix.Items.AddRange(Items);
+            var lsdRedix = new LsdRedixSort<int>();
+            lsdRedix.Items.AddRange(Items);
 
             // act
-            redix.Sort();
+            lsdRedix.Sort();
 
             // assert
             for (int i = 0; i < Items.Count; i++)
             {
-                Assert.AreEqual(Sorted[i], redix.Items[i]);
+                Assert.AreEqual(Sorted[i], lsdRedix.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void MsdRedixSortTest()
+        {
+            // arrange
+            var msdRedix = new MsdRedixSort<int>();
+            msdRedix.Items.AddRange(Items);
+
+            // act
+            msdRedix.Sort();
+
+            // assert
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], msdRedix.Items[i]);
             }
         }
     }
