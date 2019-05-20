@@ -48,6 +48,8 @@
             this.HeapSortBtn = new System.Windows.Forms.Button();
             this.GnomeSortBtn = new System.Windows.Forms.Button();
             this.TreeSortBtn = new System.Windows.Forms.Button();
+            this.LsdRedixSortBtn = new System.Windows.Forms.Button();
+            this.MsdRedixSortBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +132,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Location = new System.Drawing.Point(339, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(461, 128);
+            this.panel3.Size = new System.Drawing.Size(522, 128);
             this.panel3.TabIndex = 4;
             // 
             // BubbleSortBtn
@@ -240,11 +242,33 @@
             this.TreeSortBtn.UseVisualStyleBackColor = true;
             this.TreeSortBtn.Click += new System.EventHandler(this.TreeSortBtn_Click);
             // 
+            // LsdRedixSortBtn
+            // 
+            this.LsdRedixSortBtn.Location = new System.Drawing.Point(671, 134);
+            this.LsdRedixSortBtn.Name = "LsdRedixSortBtn";
+            this.LsdRedixSortBtn.Size = new System.Drawing.Size(85, 23);
+            this.LsdRedixSortBtn.TabIndex = 16;
+            this.LsdRedixSortBtn.Text = "LsdRedixSort";
+            this.LsdRedixSortBtn.UseVisualStyleBackColor = true;
+            this.LsdRedixSortBtn.Click += new System.EventHandler(this.LsdRedixSortBtn_Click);
+            // 
+            // MsdRedixSortBtn
+            // 
+            this.MsdRedixSortBtn.Location = new System.Drawing.Point(762, 134);
+            this.MsdRedixSortBtn.Name = "MsdRedixSortBtn";
+            this.MsdRedixSortBtn.Size = new System.Drawing.Size(87, 23);
+            this.MsdRedixSortBtn.TabIndex = 17;
+            this.MsdRedixSortBtn.Text = "MsdRedixSort";
+            this.MsdRedixSortBtn.UseVisualStyleBackColor = true;
+            this.MsdRedixSortBtn.Click += new System.EventHandler(this.MsdRedixSortBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(861, 450);
+            this.Controls.Add(this.MsdRedixSortBtn);
+            this.Controls.Add(this.LsdRedixSortBtn);
             this.Controls.Add(this.TreeSortBtn);
             this.Controls.Add(this.GnomeSortBtn);
             this.Controls.Add(this.HeapSortBtn);
@@ -292,6 +316,8 @@
         private System.Windows.Forms.Button HeapSortBtn;
         private System.Windows.Forms.Button GnomeSortBtn;
         private System.Windows.Forms.Button TreeSortBtn;
+        private System.Windows.Forms.Button LsdRedixSortBtn;
+        private System.Windows.Forms.Button MsdRedixSortBtn;
     }
 }
 

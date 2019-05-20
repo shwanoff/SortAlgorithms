@@ -16,7 +16,11 @@ namespace Algorithm
         {
             int length = GetMaxLength(Items);
             var result = SortCollection(Items, length - 1);
-            Items = result;
+
+            for(int i = 0; i < result.Count; i++)
+            {
+                Set(i, result[i]);
+            }
         }
 
         private List<T> SortCollection(List<T> collection, int step)
