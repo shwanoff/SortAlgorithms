@@ -40,31 +40,31 @@ namespace Algorithm
         {
             var length = left.Count + right.Count;
             var leftPointer = 0;
-            var rightPinter = 0;
+            var rightPointer = 0;
 
             var result = new List<T>();
 
             for(int i = 0; i < length; i++)
             {
-                if(leftPointer < left.Count && rightPinter < right.Count)
+                if(leftPointer < left.Count && rightPointer < right.Count)
                 {
-                    if(Compare(left[leftPointer], right[rightPinter]) == -1)
+                    if(Compare(left[leftPointer], right[rightPointer]) == -1)
                     {
                         result.Add(left[leftPointer]);
                         leftPointer++;
                     }
                     else
                     {
-                        result.Add(right[rightPinter]);
-                        rightPinter++;
+                        result.Add(right[rightPointer]);
+                        rightPointer++;
                     }
                 }
                 else
                 {
-                    if(rightPinter < right.Count)
+                    if(rightPointer < right.Count)
                     {
-                        result.Add(right[rightPinter]);
-                        rightPinter++;
+                        result.Add(right[rightPointer]);
+                        rightPointer++;
                     }
                     else
                     {
