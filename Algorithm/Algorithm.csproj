@@ -53,6 +53,7 @@
     <Compile Include="MsdRedixSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LsdRedixSort.cs" />
+    <Compile Include="QuickSort.cs" />
     <Compile Include="SelectionSort.cs" />
     <Compile Include="ShellSort.cs" />
   </ItemGroup>
