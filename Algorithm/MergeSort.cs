@@ -42,7 +42,7 @@ namespace Algorithm
             var leftPointer = 0;
             var rightPointer = 0;
 
-            var result = new List<T>();
+            var result = new List<T>(length);
 
             for(int i = 0; i < length; i++)
             {
